@@ -22,3 +22,10 @@ def heatmap_corr(df):
     # Draw the heatmap with the mask and correct aspect ratio
     sns.heatmap(corr, mask=mask, annot=True, cmap=cmap, vmax=.3, center=0,
                 square=True, linewidths=.5, cbar_kws={"shrink": .5})
+
+if __name__ == "__main__":
+    import pandas as pd
+    df = pd.read_csv("data/hormigon.csv")
+    heatmap_corr(df)
+    plt.savefig("heatmap.png") # Lo crea a parte
+    #plt.show()
